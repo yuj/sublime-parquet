@@ -5,12 +5,14 @@ Reads Apache Parquet files in Sublime Text. The records are shown in JSON format
 ![screenshot](https://raw.github.com/yuj/sublime-parquet/master/screenshot.png)
 
 # Installation
-Method 1: 
+Method 1: via Package Control
 
-Easiest way to install the pcakge is to use [Package Control](https://packagecontrol.io/).
+1. Make sure you have [Package Control](https://packagecontrol.io/installation) installed.
+1. Open the Command Palette (`ctrl-shift-P` on Ubuntu; `command-shift-P` on macOS) and choose _Install Package_.
+1. Choose _Parquet_ from the list.
 (The package submission is underway.)
 
-Method 2:
+Method 2: manual
 
 *macOS*
 ```shell
@@ -28,5 +30,6 @@ git clone https://github.com/yuj/sublime-parquet.git
 This sublime package depends on the 'parquet-tools' software. Make sure it is installed and on your PATH. See [parquet-tools](https://github.com/Parquet/parquet-mr/tree/master/parquet-tools) for details.
 
 On macOS, ```brew install parquet-tools``` .
-On Ubuntu, see https://github.com/Parquet/parquet-mr/issues/321 to make sure the shell scripts are installed properly.
+
+On Ubuntu, see https://github.com/Parquet/parquet-mr/issues/321 to properly install the shell scripts.
 
