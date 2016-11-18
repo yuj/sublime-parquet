@@ -5,25 +5,11 @@ Reads Apache Parquet files in Sublime Text. The records are shown in JSON format
 ![screenshot](https://raw.github.com/yuj/sublime-parquet/master/screenshot.png)
 
 # Installation
-**Method 1: via Package Control**
+**via Package Control**
 
 1. Make sure you have [Package Control](https://packagecontrol.io/installation) installed.
 1. Open the Command Palette (`command-shift-P` on macOS; `ctrl-shift-P` on Ubuntu) and choose _Install Package_.
 1. Choose _Parquet_ from the list.
-
-**Method 2: manual**
-
-*macOS*
-```shell
-cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
-git clone https://github.com/yuj/sublime-parquet.git parquet
-```
-
-*Ubuntu*
-```shell
-cd ~/.config/sublime-text-3/Packages
-git clone https://github.com/yuj/sublime-parquet.git parquet
-```
 
 # Requirement
 This sublime package depends on the 'parquet-tools' software. Make sure it is installed and on your PATH. See [parquet-tools](https://github.com/Parquet/parquet-mr/tree/master/parquet-tools) for details.
