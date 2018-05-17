@@ -12,7 +12,7 @@ Reads Apache Parquet files in Sublime Text. The records are shown in JSON format
 1. Choose _Parquet_ from the list.
 
 # Requirement
-This sublime package depends on the [parquet-tools](https://github.com/Parquet/parquet-mr/tree/master/parquet-tools) software. Make sure it is installed and on your PATH.
+This sublime package depends on the [parquet-tools](https://github.com/apache/parquet-mr/tree/master/parquet-tools) software. Make sure it is installed and on your PATH.
 
 On macOS, run ```brew install parquet-tools```.
 
