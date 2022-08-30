@@ -8,25 +8,26 @@ import subprocess
 
 
 """
-Parquet package for Sublime Text
-https://github.com/yuj/sublime-parquet
+Parquet package for Sublime Text, with python tooling.
+https://github.com/dogversioning/sublime-parquet-python
+Forked from https://github.com/yuj/sublime-parquet
 
-External dependency: parquet-tools (see https://github.com/Parquet/parquet-mr/tree/master/parquet-tools)
+External dependency: parquet-tools (https://github.com/ktrueda/parquet-tools)
 """
 
 
-COMMAND_NOT_FOUND_MSG = "!!! Make sure 'parquet-tools' is installed and on your PATH !!!\n"
-COMMAND_LINE = "parquet-tools cat --json --no-color {0}"
+COMMAND_NOT_FOUND_MSG = "'parquet-tools' not found. Make sure python is in your PATH and install with 'pip install parquet-tools\n"
+COMMAND_LINE = "parquet-tools csv {0}"
 
 
 def run_command(command):
     p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    return iter(p.stdout.readline, b'')
+    return iter(p.stdout.readline, b"")
 
 
 class ParquetCommand(sublime_plugin.TextCommand):
     def run(self, edit, filename=None):
-        if filename is None or not filename.endswith('.parquet'):
+        if filename is None or not filename.endswith(".parquet"):
             return
 
         pos = 0
@@ -45,9 +46,9 @@ class ParquetCommand(sublime_plugin.TextCommand):
 class OpenParquetFile(sublime_plugin.EventListener):
     def on_load(self, view):
         filename = view.file_name()
-        if filename.endswith('.parquet'):
+        if filename.endswith(".parquet"):
             sublime.status_message("opening parquet file: " + filename)
             print("opening parquet file: " + filename)
             parquet_view = view.window().new_file()
             view.close()
-            parquet_view.run_command('parquet', {'filename': filename})
+            parquet_view.run_command("parquet", {"filename": filename})
