@@ -90,3 +90,9 @@ ENV/
 
 # IDE
 .idea
+
+#sample data
+.parquet
+
+#input testing
+data/

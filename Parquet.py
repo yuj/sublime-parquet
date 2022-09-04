@@ -25,17 +25,17 @@ def run_command(command):
     return iter(p.stdout.readline, b"")
 
 
-class ParquetCommand(sublime_plugin.TextCommand):
+class ParquetpythonCommand(sublime_plugin.TextCommand):
     def run(self, edit, filename=None):
         if filename is None or not filename.endswith(".parquet"):
             return
-
+        command = COMMAND_LINE.format("\"" + filename +"\"")
         pos = 0
-        command = COMMAND_LINE.format(filename).split()
-
         try:
             for line in run_command(command):
                 pos += self.view.insert(edit, pos, line.rstrip().decode("utf-8") + "\n")
+        except UnicodeDecodeError:
+            print(line)
         except FileNotFoundError:
             pos += self.view.insert(edit, pos, COMMAND_NOT_FOUND_MSG)
 
@@ -46,9 +46,10 @@ class ParquetCommand(sublime_plugin.TextCommand):
 class OpenParquetFile(sublime_plugin.EventListener):
     def on_load(self, view):
         filename = view.file_name()
+        print(filename)
         if filename.endswith(".parquet"):
             sublime.status_message("opening parquet file: " + filename)
             print("opening parquet file: " + filename)
             parquet_view = view.window().new_file()
             view.close()
-            parquet_view.run_command("parquet", {"filename": filename})
+            parquet_view.run_command("parquetpython", {"filename": filename })
