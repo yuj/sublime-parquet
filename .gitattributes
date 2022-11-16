@@ -1,0 +1,3 @@
+/.git* export-ignore
+/data export-ignore
+screencap.png export-ignore
