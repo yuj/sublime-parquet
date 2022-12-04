@@ -93,6 +93,7 @@ ENV/
 
 #sample data
 .parquet
+.csv
 
 #input testing
 data/

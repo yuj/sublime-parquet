@@ -1,0 +1,4 @@
+{
+	// set to one of 'java' or 'python', depending on which parquet-tools you're using
+	"parquet-tools": "python",
+}
