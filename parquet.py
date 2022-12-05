@@ -20,13 +20,10 @@ java: (https://github.com/Parquet/parquet-mr/tree/master/parquet-tools) v1.12.0
 """
 
 
-COMMAND_NOT_FOUND_MSG = """'parquet-tools' not found. Try one of the following:\n
-- Python: Make sure python is in your PATH and install with 'pip install parquet-tools'
-- Java: Install python-tools from release 1.12.0 of https://github.com/apache/parquet-mr
-- (deprecated) On Mac, install with brew: 'brew install parquet-tools'
+COMMAND_NOT_FOUND_MSG = """'parquet-tools' not found.\n
+Make sure python is in your PATH and install with 'pip install parquet-tools'
 """
 PYTHON_COMMAND_LINE = "parquet-tools csv {0}"
-JAVA_COMMAND_LINE = "parquet-tools cat --json --no-color {0}"
 UNICODE_ERROR = "Non-unicode characters prevented rendering: \n"
 
 
@@ -39,10 +36,7 @@ class ParquetCommand(sublime_plugin.TextCommand):
     def run(self, edit, filename=None):
         if filename is None or not filename.endswith(".parquet"):
             return
-        if parquet.get("parquet-tools") == "python":
-            command = PYTHON_COMMAND_LINE.format('"' + filename + '"')
-        elif parquet.get("parquet-tools") == "java":
-            command = JAVA_COMMAND_LINE.format(filename).split()
+        command = PYTHON_COMMAND_LINE.format('"' + filename + '"')
         pos = 0
         try:
             for line in run_command(command):
