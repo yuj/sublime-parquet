@@ -11,9 +11,8 @@ import subprocess
 Parquet package for Sublime Text, with python tooling.
 https://github.com/yuj/sublime-parquet
 
-Requires one of the following:
-python: (https://github.com/ktrueda/parquet-tools) (preferred)
-java: (https://github.com/Parquet/parquet-mr/tree/master/parquet-tools) v1.12.0
+Requires the python port of parquet-tools
+https://github.com/ktrueda/parquet-tools
 """
 
 
