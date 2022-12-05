@@ -1,5 +1,5 @@
 # sublime-parquet
-Reads Apache Parquet files in Sublime Text using they python parquet-tools package. Files are rendered as read-only 
+Reads Apache Parquet files in Sublime Text using they python parquet-tools package. Files are rendered as CSVs.
 
 # Screenshot
 ![screencap](https://raw.github.com/dogversioning/sublime-parquet-python/main/screencap.png)
