@@ -6,9 +6,6 @@ import sublime_plugin
 import os
 import subprocess
 
-parquet_filename = "Parquet.sublime-settings"
-parquet = sublime.load_settings(parquet_filename)
-
 
 """
 Parquet package for Sublime Text, with python tooling.
@@ -41,7 +38,7 @@ class ParquetCommand(sublime_plugin.TextCommand):
         try:
             for line in run_command(command):
                 row = line.decode("utf-8")
-                pos += self.view.insert(edit, pos, row + "\n")
+                pos += self.view.insert(edit, pos, row.rstrip() + "\n")
         except (UnicodeDecodeError, TypeError):
             self.view.set_name(os.path.basename(filename))
             self.view.set_read_only(True)
