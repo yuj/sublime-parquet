@@ -54,4 +54,6 @@ class OpenParquetFile(sublime_plugin.EventListener):
         filename = view.file_name()
         if filename.endswith(".parquet"):
             sublime.status_message("opening parquet file: " + filename)
-            view.run_command("parquet", {"filename": filename})
+            parquet_view = view.window().new_file()
+            view.close()
+            parquet_view.run_command("parquet", {"filename": filename})
