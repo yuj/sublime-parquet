@@ -1,5 +1,5 @@
 # sublime-parquet
-Reads Apache Parquet files in Sublime Text. Can use several mechanisms for decoding - seee requirements.
+Reads Apache Parquet files in Sublime Text using they python parquet-tools package. Files are rendered as read-only 
 
 # Screenshot
 ![screencap](https://raw.github.com/dogversioning/sublime-parquet-python/main/screencap.png)
@@ -13,5 +13,4 @@ Reads Apache Parquet files in Sublime Text. Can use several mechanisms for decod
 
 # Requirements
 
-## Python
 You'll need to have a python environment in your path, and then install [parquet-tools](https://github.com/ktrueda/parquet-tools) with `pip install parquet-tools`.
