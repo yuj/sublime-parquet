@@ -19,7 +19,7 @@ https://github.com/ktrueda/parquet-tools
 COMMAND_NOT_FOUND_MSG = """'parquet-tools' not found.\n
 Make sure python is in your PATH and install with 'pip install parquet-tools'
 """
-PYTHON_COMMAND_LINE = "parquet-tools csv {0}"
+PYTHON_COMMAND = ["parquet-tools", "csv"]
 UNICODE_ERROR = "Non-unicode characters prevented rendering: \n"
 
 
@@ -32,7 +32,8 @@ class ParquetCommand(sublime_plugin.TextCommand):
     def run(self, edit, filename=None):
         if filename is None or not filename.endswith(".parquet"):
             return
-        command = PYTHON_COMMAND_LINE.format('"' + filename + '"')
+        command = PYTHON_COMMAND
+        command.append(filename)
         pos = 0
         try:
             for line in run_command(command):
