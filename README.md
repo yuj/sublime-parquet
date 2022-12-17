@@ -13,4 +13,6 @@ Reads Apache Parquet files in Sublime Text using they python parquet-tools packa
 
 # Requirements
 
-You'll need to have a python environment in your path, and then install [parquet-tools](https://github.com/ktrueda/parquet-tools) with `pip install parquet-tools`.
+ - Install [parquet-tools](https://github.com/ktrueda/parquet-tools) with `pip install parquet-tools`.
+ - On Windows: make sure your python environment is in your path
+ - On Mac/Linux: create a symlink from your python bin folder to the parquet-tools binary someplace on the system path, like `/usr/local/bin`
